@@ -122,10 +122,16 @@ def str_to_file(text,path):
     with open(path,'wb') as f:
         f.write(text)
 
+def usage_exit():
+    # Remove images from usage and print
+    usage_text = USAGE
+    usage_text = re.sub('\n<img [^>]*>\n','',usage_text)
+    print usage_text
+    exit(1)
+
 def main(argv):
     if len(argv) < 3 or argv[1] in ['--help','--h']:
-        print USAGE,
-        exit(1)
+        usage_exit()
 
     try:
         options     = Options(argv)
@@ -253,6 +259,8 @@ USAGE='''\
 POM Pilot
 =========
 
+<img src="pompilot-glasses.png">
+
 Overview
 --------
 
@@ -280,11 +288,11 @@ Example 1: Generate project pom.xml has JUnit dependency in test scope
 
 Example 2: pom.xml for Hadoop app
 
-    pompilot.py mapreduce-lab2 \
-        org.apache.hadoop:hadoop-aws:2.7.1 \
-        org.apache.hadoop:hadoop-client:2.7.1 \
-        com.amazonaws:aws-java-sdk-s3:1.10.30 \
-        org.apache.mrunit:mrunit:1.1.0:classifier=hadoop2:scope=test \
+    pompilot.py mapreduce-lab2 \\
+        org.apache.hadoop:hadoop-aws:2.7.1 \\
+        org.apache.hadoop:hadoop-client:2.7.1 \\
+        com.amazonaws:aws-java-sdk-s3:1.10.30 \\
+        org.apache.mrunit:mrunit:1.1.0:classifier=hadoop2:scope=test \\
         junit:junit:4.12:scope=test
 
 Install

@@ -34,3 +34,10 @@ Example 2: pom.xml for Hadoop app
         com.amazonaws:aws-java-sdk-s3:1.10.30 \
         org.apache.mrunit:mrunit:1.1.0:classifier=hadoop2:scope=test \
         junit:junit:4.12:scope=test
+
+Install
+-------
+
+    curl -LO https://raw.githubusercontent.com/asimjalis/pompilot/master/pompilot.py
+    chmod 755 pompilot.py
+    mv ~/pompilot.py ~/bin/.

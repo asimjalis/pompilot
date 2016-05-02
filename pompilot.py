@@ -249,6 +249,10 @@ POM_XML = '''\
 '''
 
 USAGE='''\
+
+POM Pilot
+=========
+
 Overview
 --------
 
@@ -276,12 +280,19 @@ Example 1: Generate project pom.xml has JUnit dependency in test scope
 
 Example 2: pom.xml for Hadoop app
 
-    pompilot.py mapreduce-lab2 \\
-        org.apache.hadoop:hadoop-aws:2.7.1 \\
-        org.apache.hadoop:hadoop-client:2.7.1 \\
-        com.amazonaws:aws-java-sdk-s3:1.10.30 \\
-        org.apache.mrunit:mrunit:1.1.0:classifier=hadoop2:scope=test \\
+    pompilot.py mapreduce-lab2 \
+        org.apache.hadoop:hadoop-aws:2.7.1 \
+        org.apache.hadoop:hadoop-client:2.7.1 \
+        com.amazonaws:aws-java-sdk-s3:1.10.30 \
+        org.apache.mrunit:mrunit:1.1.0:classifier=hadoop2:scope=test \
         junit:junit:4.12:scope=test
+
+Install
+-------
+
+    curl -LO https://raw.githubusercontent.com/asimjalis/pompilot/master/pompilot.py
+    chmod 755 pompilot.py
+    mv ~/pompilot.py ~/bin/.
 '''
 
 if __name__ == '__main__':

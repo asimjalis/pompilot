@@ -25,11 +25,11 @@ Options
 Examples
 --------
 
-Example 1: Generate project pom.xml has JUnit dependency in test scope
+Example 1: Generate pom.xml and project with JUnit dependency in test scope.
 
     pompilot.py linux-lab1 junit:junit:4.12:scope=test
 
-Example 2: pom.xml for Hadoop app
+Example 2: Generate pom.xml and project for Hadoop app.
 
     pompilot.py mapreduce-lab2 \
         org.apache.hadoop:hadoop-aws:2.7.1 \

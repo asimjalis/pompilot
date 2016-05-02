@@ -117,6 +117,7 @@ def to_pom_xml(group_id,artifact_id,version,deps,jdk):
         deps_xml=deps_xml)
 
 def str_to_file(text,path):
+    print "Generating {path}".format(path=path)
     path_dir = os.path.dirname(path)
     os.makedirs(path_dir)
     with open(path,'wb') as f:
@@ -285,7 +286,8 @@ Options
 Examples
 --------
 
-Example 1: Generate pom.xml and project with JUnit dependency in test scope.
+Example 1: Generate pom.xml and project with JUnit dependency in test
+scope.
 
     pompilot.py linux-lab1 junit:junit:4.12:scope=test
 

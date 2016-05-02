@@ -122,14 +122,17 @@ def str_to_file(text,path):
     with open(path,'wb') as f:
         f.write(text)
 
-def usage_exit():
+def usage_exit(remove_images=True):
     # Remove images from usage and print
     usage_text = USAGE
-    usage_text = re.sub('\n<img [^>]*>\n','',usage_text)
+    if remove_images:
+        usage_text = re.sub('\n<img [^>]*>\n','',usage_text)
     print usage_text
     exit(1)
 
 def main(argv):
+    if len(argv) == 2 and argv[1] == '--print-readme':
+        usage_exit(remove_images=False)
     if len(argv) < 3 or argv[1] in ['--help','--h']:
         usage_exit()
 

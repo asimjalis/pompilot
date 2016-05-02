@@ -2,7 +2,7 @@
 POM Pilot
 =========
 
-<img src="pompilot-glasses.png">
+<img src="pompilot-image.png">
 
 Overview
 --------
